@@ -80,8 +80,8 @@
       #editorial-minimal .feature-band img { height: 220px !important; }
       #editorial-minimal .feature-band > div { padding: 32px 24px !important; }
       #editorial-minimal .spotlight-band { grid-template-columns: 1fr !important; }
-      #editorial-minimal .spotlight-band > div:first-child { min-height: 260px !important; }
-      #editorial-minimal .spotlight-band > div:last-child { padding: 36px 24px !important; }
+      #editorial-minimal .spotlight-band > div:first-child { padding: 36px 24px !important; }
+      #editorial-minimal .spotlight-band > div:last-child { min-height: 260px !important; }
       #editorial-minimal .hours-bar { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; padding: 24px 20px !important; }
       #editorial-minimal .hours-days { flex-wrap: wrap !important; gap: 10px 24px !important; }
       #editorial-minimal .closing-cta { grid-template-columns: 1fr !important; }
@@ -499,11 +499,8 @@
   </div>
 
   <!-- Feature band: Sweet Pies spotlight + testimonial -->
-  <div class="spotlight-band" style="display:grid; grid-template-columns:1.1fr 1fr; background:#4c1a0d;">
-    <div class="reveal dir-l" style="position:relative; min-height:420px;">
-      <img src="img/savory-pie.jpg" alt="Key lime pie and craft cocktail" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
-    </div>
-    <div class="reveal dir-r" style="padding:64px 60px; display:flex; flex-direction:column; justify-content:center;">
+  <div class="spotlight-band" style="display:grid; grid-template-columns:1fr 1.1fr; background:#4c1a0d;">
+    <div class="reveal dir-l" style="padding:64px 60px; display:flex; flex-direction:column; justify-content:center;">
       <div class="label" style="margin-bottom:16px;">Sweet Pies</div>
       <h3 class="serif" style="font-size:38px; color:#f2efe9; margin:0 0 6px 0;">Key Lime</h3>
       <div style="color:#c08b61; font-weight:600; font-size:15px; margin-bottom:16px;">$7.99 slice</div>
@@ -521,6 +518,9 @@
         <p style="font-size:17px; font-style:italic; color:#f2efe9; margin:0 0 10px 0; line-height:1.5;">&ldquo;Phenomenal neighborhood pie place with a great vibe, service and food.&rdquo;</p>
         <div class="label">Brian D, Google Local Guide</div>
       </div>
+    </div>
+    <div class="reveal dir-r" style="position:relative; min-height:420px;">
+      <img src="img/savory-pie.jpg" alt="Key lime pie and craft cocktail" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
     </div>
   </div>
   <div class="reveal hours-bar" style="display:flex; align-items:center; justify-content:space-between; background:#c08b61; padding:26px 40px;">
