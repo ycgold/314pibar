@@ -193,6 +193,15 @@
       #editorial-minimal .reveal.dir-l { transform: translateX(-34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
       #editorial-minimal .reveal.dir-r { transform: translateX(34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
       #editorial-minimal .reveal.dir-l.is-visible, #editorial-minimal .reveal.dir-r.is-visible { transform: translateX(0) translateY(0) scale(1); }
+      /* Staggered cascade: cards/rows fade in one after another instead of all at once */
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(1), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(1), #editorial-minimal .list-row:nth-child(1) { transition-delay: 0ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(2), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(2), #editorial-minimal .list-row:nth-child(2) { transition-delay: 60ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(3), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(3), #editorial-minimal .list-row:nth-child(3) { transition-delay: 120ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(4), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(4), #editorial-minimal .list-row:nth-child(4) { transition-delay: 180ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(5), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(5), #editorial-minimal .list-row:nth-child(5) { transition-delay: 240ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(6), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(6), #editorial-minimal .list-row:nth-child(6) { transition-delay: 300ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(7), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(7), #editorial-minimal .list-row:nth-child(7) { transition-delay: 360ms; }
+      #editorial-minimal .menu-grid-5 > .dish-card:nth-child(n+8), #editorial-minimal .menu-grid-4 > .dish-card:nth-child(n+8), #editorial-minimal .list-row:nth-child(n+8) { transition-delay: 420ms; }
       #editorial-minimal .hero-word { display: inline-block; opacity: 0; animation: heroRise .65s cubic-bezier(.22,.68,.28,1.02) both; }
       #editorial-minimal .hero-fade { opacity: 0; animation: heroFade .6s ease both; }
       @keyframes heroRise { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
@@ -348,7 +357,7 @@
   <!-- Hero -->
   <div id="order-editorial-minimal" class="hero" style="position:relative; min-height:640px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
     <img src="img/hero-tablescape.jpg" alt="Pot pie, salad, Brussels sprouts, dessert and a glass of red wine on the table at 3.14 Pi Bar" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0;">
-    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,0.62) 0%, rgba(17,17,17,0.55) 50%, rgba(17,17,17,0.72) 100%); z-index:1;"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,0.68) 0%, rgba(17,17,17,0.72) 50%, rgba(17,17,17,0.78) 100%); z-index:1;"></div>
     <div style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; max-width:640px; padding:0 24px;">
       <div class="label badge-float" style="color:#c08b61; margin-bottom:18px;">A Table Worth Waiting For, Or Not</div>
       <h1 class="serif" style="font-size:56px; margin:0 0 20px 0; color:#f2efe9; line-height:1.15;"><span class="hero-word" style="animation-delay:0ms;">Sweet</span> <span class="hero-word" style="animation-delay:60ms;">&amp;</span> <span class="hero-word" style="animation-delay:120ms;">Savory</span> <span class="hero-word" style="animation-delay:180ms;">Pies</span> <span class="hero-word" style="animation-delay:240ms;">in</span> <span class="hero-word" style="animation-delay:300ms;">Colorado</span> <span class="hero-word" style="animation-delay:360ms;">Springs</span></h1>
@@ -863,22 +872,22 @@
     </div>
     <div style="max-width:1100px; margin:0 auto 36px auto;">
       <h3 class="serif reveal" style="font-size:22px; margin:0 0 12px 0; color:#111111;">Salads</h3>
-      <div class="list-grid reveal">
-        <div class="list-row"><span class="item-name">Go Greek Salad<span class="item-note">Kalamata olive &amp; onion tapenade, tomato, cucumber, croutons. Full $11.99, side $4.99</span></span><span class="item-price">$11.99</span></div>
-        <div class="list-row"><span class="item-name">BLTA Salad<span class="item-note">Bacon, tomato, avocado, cheddar jack. Full $12.49, side $4.99</span></span><span class="item-price">$12.49</span></div>
-        <div class="list-row"><span class="item-name">House (Simple) Salad<span class="item-note">Full $12.49 / side $4.99</span></span><span class="item-price">$12.49</span></div>
-        <div class="list-row"><span class="item-name">Tex Mex Salad<span class="item-note">Full $12.49 / side $4.99</span></span><span class="item-price">$12.49</span></div>
+      <div class="list-grid">
+        <div class="list-row reveal"><span class="item-name">Go Greek Salad<span class="item-note">Kalamata olive &amp; onion tapenade, tomato, cucumber, croutons. Full $11.99, side $4.99</span></span><span class="item-price">$11.99</span></div>
+        <div class="list-row reveal"><span class="item-name">BLTA Salad<span class="item-note">Bacon, tomato, avocado, cheddar jack. Full $12.49, side $4.99</span></span><span class="item-price">$12.49</span></div>
+        <div class="list-row reveal"><span class="item-name">House (Simple) Salad<span class="item-note">Full $12.49 / side $4.99</span></span><span class="item-price">$12.49</span></div>
+        <div class="list-row reveal"><span class="item-name">Tex Mex Salad<span class="item-note">Full $12.49 / side $4.99</span></span><span class="item-price">$12.49</span></div>
       </div>
     </div>
     <div style="max-width:1100px; margin:0 auto;">
       <h3 class="serif reveal" style="font-size:22px; margin:0 0 12px 0; color:#111111;">Appetizers</h3>
-      <div class="list-grid reveal">
-        <div class="list-row"><span class="item-name">Poutine with Choice of Gravy<span class="item-note">Chicken, beef, pork or veg green chili. Half order $6.99</span></span><span class="item-price">$12.99</span></div>
-        <div class="list-row"><span class="item-name">Brussel Sprouts Shareable<span class="item-note">Honey mustard, crispy bacon. Sized for the table</span></span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Hummus Odyssey<span class="item-note">Warm naan, kalamata olive tapenade, garlic evoo</span></span><span class="item-price">$12.99</span></div>
-        <div class="list-row"><span class="item-name">Pesto Naan Flatbread<span class="item-note">Fresh tomato, mozzarella, parmesan</span></span><span class="item-price">$9.50</span></div>
-        <div class="list-row"><span class="item-name">Sundried Tomato Naan Flatbread<span class="item-note">Marinara, mozzarella, parmesan</span></span><span class="item-price">$9.50</span></div>
-        <div class="list-row"><span class="item-name">Basket of Fries</span><span class="item-price">$5.99</span></div>
+      <div class="list-grid">
+        <div class="list-row reveal"><span class="item-name">Poutine with Choice of Gravy<span class="item-note">Chicken, beef, pork or veg green chili. Half order $6.99</span></span><span class="item-price">$12.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Brussel Sprouts Shareable<span class="item-note">Honey mustard, crispy bacon. Sized for the table</span></span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Hummus Odyssey<span class="item-note">Warm naan, kalamata olive tapenade, garlic evoo</span></span><span class="item-price">$12.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Pesto Naan Flatbread<span class="item-note">Fresh tomato, mozzarella, parmesan</span></span><span class="item-price">$9.50</span></div>
+        <div class="list-row reveal"><span class="item-name">Sundried Tomato Naan Flatbread<span class="item-note">Marinara, mozzarella, parmesan</span></span><span class="item-price">$9.50</span></div>
+        <div class="list-row reveal"><span class="item-name">Basket of Fries</span><span class="item-price">$5.99</span></div>
       </div>
     </div>
     <div style="text-align:center; margin-top:34px;">
@@ -954,36 +963,36 @@
     <h2 class="serif reveal" style="font-size:40px; margin:10px 0 16px 0; color:#111111;">Cutie Pies &amp; Whole Pies</h2>
     <p class="reveal" style="font-size:14px; line-height:1.7; color:rgba(42,38,36,0.75); max-width:600px; margin:0 auto 30px auto;">Individual Cutie Pies $9.99 each (choose 4 for a $36.99 Cutie Pack). Whole fruit pies $39.99, whole cream pies $35.99. All frozen and oven-ready.</p>
     <div style="max-width:1100px; margin:0 auto 30px auto;">
-      <div class="list-grid reveal">
-        <div class="list-row"><span class="item-name">Cookies and Dreams Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Key Lime Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Caramel Apple Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Blueberry Fields Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Son of a Peach Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Amaretto Cherry Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Nutella Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Black Bottom Pecan Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Nutty Professor Cutie Pie</span><span class="item-price">$9.99</span></div>
-        <div class="list-row"><span class="item-name">Cutie Pack<span class="item-note">Choose 4, subject to availability</span></span><span class="item-price">$36.99</span></div>
+      <div class="list-grid">
+        <div class="list-row reveal"><span class="item-name">Cookies and Dreams Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Key Lime Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Caramel Apple Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Blueberry Fields Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Son of a Peach Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Amaretto Cherry Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Nutella Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Black Bottom Pecan Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Nutty Professor Cutie Pie</span><span class="item-price">$9.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Cutie Pack<span class="item-note">Choose 4, subject to availability</span></span><span class="item-price">$36.99</span></div>
       </div>
     </div>
     <div style="max-width:1100px; margin:0 auto;">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 48px; text-align:left;">
         <div>
           <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#111111;">Whole Fruit Pies: $39.99</h3>
-          <div class="list-row"><span class="item-name">Amaretto Cherry</span><span class="item-price">$39.99</span></div>
-          <div class="list-row"><span class="item-name">Blueberry Fields</span><span class="item-price">$39.99</span></div>
-          <div class="list-row"><span class="item-name">Son of a Peach</span><span class="item-price">$39.99</span></div>
-          <div class="list-row"><span class="item-name">Caramel Apple</span><span class="item-price">$39.99</span></div>
-          <div class="list-row"><span class="item-name">Black Bottom Bourbon Pecan</span><span class="item-price">$39.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Amaretto Cherry</span><span class="item-price">$39.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Blueberry Fields</span><span class="item-price">$39.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Son of a Peach</span><span class="item-price">$39.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Caramel Apple</span><span class="item-price">$39.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Black Bottom Bourbon Pecan</span><span class="item-price">$39.99</span></div>
         </div>
         <div>
           <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#111111;">Whole Cream Pies: $35.99</h3>
-          <div class="list-row"><span class="item-name">Cookies and Dream</span><span class="item-price">$35.99</span></div>
-          <div class="list-row"><span class="item-name">Nutella Italian Silk</span><span class="item-price">$35.99</span></div>
-          <div class="list-row"><span class="item-name">Nutty Professor</span><span class="item-price">$35.99</span></div>
-          <div class="list-row"><span class="item-name">Key Lime</span><span class="item-price">$35.99</span></div>
-          <div class="list-row"><span class="item-name">Lemon Pi</span><span class="item-price">$35.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Cookies and Dream</span><span class="item-price">$35.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Nutella Italian Silk</span><span class="item-price">$35.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Nutty Professor</span><span class="item-price">$35.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Key Lime</span><span class="item-price">$35.99</span></div>
+          <div class="list-row reveal"><span class="item-name">Lemon Pi</span><span class="item-price">$35.99</span></div>
         </div>
       </div>
     </div>
@@ -1000,47 +1009,47 @@
     </div>
     <div style="max-width:1100px; margin:0 auto 30px auto;">
       <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#f2efe9;">Hand Pies: $5.00 each</h3>
-      <div class="list-grid reveal" style="color:#f2efe9;">
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Italian Sausage Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Spinach Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">BBQ Pork Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mac N&rsquo; Cheese Hand Pie<span class="item-note" style="color:rgba(242,239,233,0.55);">Flaky empanada-style, house mac and cheese</span></span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Buffalo Chicken Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
+      <div class="list-grid" style="color:#f2efe9;">
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Italian Sausage Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Spinach Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">BBQ Pork Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mac N&rsquo; Cheese Hand Pie<span class="item-note" style="color:rgba(242,239,233,0.55);">Flaky empanada-style, house mac and cheese</span></span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Buffalo Chicken Hand Pie</span><span class="item-price" style="color:#c08b61;">$5.00</span></div>
       </div>
     </div>
     <div style="max-width:1100px; margin:0 auto 30px auto;">
       <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#f2efe9;">Sides &amp; Quiche</h3>
-      <div class="list-grid reveal" style="color:#f2efe9;">
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Loaded Mashers</span><span class="item-price" style="color:#c08b61;">$5.49</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">French Fries</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Fried Brussel Sprouts Side</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mac &amp; Cheese Side</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mashers</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Chips</span><span class="item-price" style="color:#c08b61;">$3.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Bacon &amp; Cheddar Mini Quiche</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Spinach, Sun-dried Tomato &amp; Swiss Mini Quiche</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Quiche &amp; Side Salad</span><span class="item-price" style="color:#c08b61;">$11.49</span></div>
+      <div class="list-grid" style="color:#f2efe9;">
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Loaded Mashers</span><span class="item-price" style="color:#c08b61;">$5.49</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">French Fries</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Fried Brussel Sprouts Side</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mac &amp; Cheese Side</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mashers</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Chips</span><span class="item-price" style="color:#c08b61;">$3.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Bacon &amp; Cheddar Mini Quiche</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Spinach, Sun-dried Tomato &amp; Swiss Mini Quiche</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Quiche &amp; Side Salad</span><span class="item-price" style="color:#c08b61;">$11.49</span></div>
       </div>
     </div>
     <div style="max-width:1100px; margin:0 auto 30px auto;">
       <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#f2efe9;">Kids Menu: $6.99 each</h3>
-      <div class="list-grid reveal" style="color:#f2efe9;">
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Grilled Cheese Pi-Nini</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Naan Pizza<span class="item-note" style="color:rgba(242,239,233,0.55);">Mozzarella &amp; marinara on naan</span></span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Chicken Tenders &amp; Fries</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mac and Cheese</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
+      <div class="list-grid" style="color:#f2efe9;">
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Grilled Cheese Pi-Nini</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Naan Pizza<span class="item-note" style="color:rgba(242,239,233,0.55);">Mozzarella &amp; marinara on naan</span></span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Chicken Tenders &amp; Fries</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Mac and Cheese</span><span class="item-price" style="color:#c08b61;">$6.99</span></div>
       </div>
     </div>
     <div style="max-width:1100px; margin:0 auto;">
       <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#f2efe9;">Add-Ons</h3>
       <p style="font-size:12px; color:rgba(242,239,233,0.55); margin:0 0 14px 0;">Available when you build your order online.</p>
-      <div class="list-grid reveal" style="color:#f2efe9;">
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Avocado</span><span class="item-price" style="color:#c08b61;">$1.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Extra Gravy</span><span class="item-price" style="color:#c08b61;">$1.00</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Extra Naan</span><span class="item-price" style="color:#c08b61;">$1.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Add Crispy Chicken</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Add Grilled Chicken</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
-        <div class="list-row" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Bacon</span><span class="item-price" style="color:#c08b61;">$1.50</span></div>
+      <div class="list-grid" style="color:#f2efe9;">
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Avocado</span><span class="item-price" style="color:#c08b61;">$1.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Extra Gravy</span><span class="item-price" style="color:#c08b61;">$1.00</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Extra Naan</span><span class="item-price" style="color:#c08b61;">$1.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Add Crispy Chicken</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Add Grilled Chicken</span><span class="item-price" style="color:#c08b61;">$4.99</span></div>
+        <div class="list-row reveal" style="border-bottom-color:rgba(242,239,233,0.12);"><span class="item-name">Bacon</span><span class="item-price" style="color:#c08b61;">$1.50</span></div>
       </div>
     </div>
     <div style="text-align:center; margin-top:30px;">
@@ -1063,19 +1072,19 @@
   <div class="section-pad" style="padding:50px 64px;">
     <div style="max-width:1100px; margin:0 auto;">
       <h3 class="serif reveal" style="font-size:20px; margin:0 0 10px 0; color:#111111; text-align:center;">Non-Alcoholic Beverages</h3>
-      <div class="list-grid reveal">
-        <div class="list-row"><span class="item-name">Soda</span><span class="item-price">$2.99</span></div>
-        <div class="list-row"><span class="item-name">Italian Sodas</span><span class="item-price">$3.99</span></div>
-        <div class="list-row"><span class="item-name">Coffee</span><span class="item-price">$2.99</span></div>
-        <div class="list-row"><span class="item-name">Hot Tea</span><span class="item-price">$2.99</span></div>
-        <div class="list-row"><span class="item-name">Iced Chai</span><span class="item-price">$4.50</span></div>
-        <div class="list-row"><span class="item-name">Hot Apple Cider</span><span class="item-price">$1.99</span></div>
-        <div class="list-row"><span class="item-name">Hot Cocoa</span><span class="item-price">$2.99</span></div>
-        <div class="list-row"><span class="item-name">Apple Juice</span><span class="item-price">$1.99</span></div>
-        <div class="list-row"><span class="item-name">Orange Juice</span><span class="item-price">$1.99</span></div>
-        <div class="list-row"><span class="item-name">Cranberry Juice</span><span class="item-price">$1.99</span></div>
-        <div class="list-row"><span class="item-name">IBC Root Beer</span><span class="item-price">$2.99</span></div>
-        <div class="list-row"><span class="item-name">Ginger Beer (Non-Alcoholic)</span><span class="item-price">$1.99</span></div>
+      <div class="list-grid">
+        <div class="list-row reveal"><span class="item-name">Soda</span><span class="item-price">$2.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Italian Sodas</span><span class="item-price">$3.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Coffee</span><span class="item-price">$2.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Hot Tea</span><span class="item-price">$2.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Iced Chai</span><span class="item-price">$4.50</span></div>
+        <div class="list-row reveal"><span class="item-name">Hot Apple Cider</span><span class="item-price">$1.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Hot Cocoa</span><span class="item-price">$2.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Apple Juice</span><span class="item-price">$1.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Orange Juice</span><span class="item-price">$1.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Cranberry Juice</span><span class="item-price">$1.99</span></div>
+        <div class="list-row reveal"><span class="item-name">IBC Root Beer</span><span class="item-price">$2.99</span></div>
+        <div class="list-row reveal"><span class="item-name">Ginger Beer (Non-Alcoholic)</span><span class="item-price">$1.99</span></div>
       </div>
     </div>
   </div>
