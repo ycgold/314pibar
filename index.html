@@ -12,7 +12,7 @@
   .page-panel.panel-active { display: block; }
 
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Jost', sans-serif; background: #d9d6d5; color: #2a2624; }
+    body { margin: 0; font-family: 'Jost', sans-serif; background: #d9d6d5; color: #2a2624; overflow-x: hidden; }
     a { color: #4c1a0d; text-decoration: none; } a:hover { color: #c08b61; }
     .script { font-family: 'Cormorant Garamond', 'Georgia', serif; font-style: italic; font-weight: 500; }
     .serif { font-family: 'Cormorant Garamond', 'Georgia', serif; font-weight: 600; }
@@ -98,15 +98,23 @@
       @keyframes icon-pulse-warm { 0%,100% { transform: scale(1); } 50% { transform: scale(1.2); } }
       #editorial-minimal .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
       #editorial-minimal .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      #editorial-minimal .reveal.dir-l { transform: translateX(-34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
+      #editorial-minimal .reveal.dir-r { transform: translateX(34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
+      #editorial-minimal .reveal.dir-l.is-visible, #editorial-minimal .reveal.dir-r.is-visible { transform: translateX(0) translateY(0) scale(1); }
+      #editorial-minimal .hero-word { display: inline-block; opacity: 0; animation: heroRise .65s cubic-bezier(.22,.68,.28,1.02) both; }
+      #editorial-minimal .hero-fade { opacity: 0; animation: heroFade .6s ease both; }
+      @keyframes heroRise { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+      @keyframes heroFade { 0% { opacity: 0; } 100% { opacity: 1; } }
     }
     @media (prefers-reduced-motion: reduce) {
-      #editorial-minimal .reveal { opacity: 1; transform: none; }
+      #editorial-minimal .reveal, #editorial-minimal .reveal.dir-l, #editorial-minimal .reveal.dir-r { opacity: 1; transform: none; }
+      #editorial-minimal .hero-word, #editorial-minimal .hero-fade { opacity: 1; animation: none; }
       #editorial-minimal .btn-primary:hover, #editorial-minimal .btn-ghost:hover, #editorial-minimal .btn-dark:hover, #editorial-minimal .dish-card:hover, #editorial-minimal .dish-card:hover img, #editorial-minimal .gallery-tile:hover img { transform: none; }
     }
 
 
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Jost', sans-serif; background: #d9d6d5; color: #2a2624; }
+    body { margin: 0; font-family: 'Jost', sans-serif; background: #d9d6d5; color: #2a2624; overflow-x: hidden; }
     a { color: #4c1a0d; text-decoration: none; } a:hover { color: #c08b61; }
     .serif { font-family: 'Cormorant Garamond', 'Georgia', serif; font-weight: 600; }
     #editorial-minimal .label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; color: #c08b61; font-weight: 600; }
@@ -182,15 +190,23 @@
       @keyframes icon-pulse-warm { 0%,100% { transform: scale(1); } 50% { transform: scale(1.2); } }
       #editorial-minimal .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
       #editorial-minimal .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      #editorial-minimal .reveal.dir-l { transform: translateX(-34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
+      #editorial-minimal .reveal.dir-r { transform: translateX(34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
+      #editorial-minimal .reveal.dir-l.is-visible, #editorial-minimal .reveal.dir-r.is-visible { transform: translateX(0) translateY(0) scale(1); }
+      #editorial-minimal .hero-word { display: inline-block; opacity: 0; animation: heroRise .65s cubic-bezier(.22,.68,.28,1.02) both; }
+      #editorial-minimal .hero-fade { opacity: 0; animation: heroFade .6s ease both; }
+      @keyframes heroRise { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+      @keyframes heroFade { 0% { opacity: 0; } 100% { opacity: 1; } }
     }
     @media (prefers-reduced-motion: reduce) {
-      #editorial-minimal .reveal { opacity: 1; transform: none; }
+      #editorial-minimal .reveal, #editorial-minimal .reveal.dir-l, #editorial-minimal .reveal.dir-r { opacity: 1; transform: none; }
+      #editorial-minimal .hero-word, #editorial-minimal .hero-fade { opacity: 1; animation: none; }
       #editorial-minimal .btn-primary:hover, #editorial-minimal .btn-ghost:hover, #editorial-minimal .btn-dark:hover, #editorial-minimal .dish-card:hover, #editorial-minimal .dish-card:hover img { transform: none; }
     }
 
 
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Jost', sans-serif; background: #d9d6d5; color: #2a2624; }
+    body { margin: 0; font-family: 'Jost', sans-serif; background: #d9d6d5; color: #2a2624; overflow-x: hidden; }
     a { color: #4c1a0d; text-decoration: none; } a:hover { color: #c08b61; }
     .serif { font-family: 'Cormorant Garamond', 'Georgia', serif; font-weight: 600; }
     #editorial-minimal .label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; color: #c08b61; font-weight: 600; }
@@ -273,9 +289,17 @@
       @keyframes icon-pulse-warm { 0%,100% { transform: scale(1); } 50% { transform: scale(1.2); } }
       #editorial-minimal .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
       #editorial-minimal .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      #editorial-minimal .reveal.dir-l { transform: translateX(-34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
+      #editorial-minimal .reveal.dir-r { transform: translateX(34px) translateY(8px) scale(.95); transition: opacity .75s cubic-bezier(.22,.68,.28,1.02), transform .75s cubic-bezier(.22,.68,.28,1.02); }
+      #editorial-minimal .reveal.dir-l.is-visible, #editorial-minimal .reveal.dir-r.is-visible { transform: translateX(0) translateY(0) scale(1); }
+      #editorial-minimal .hero-word { display: inline-block; opacity: 0; animation: heroRise .65s cubic-bezier(.22,.68,.28,1.02) both; }
+      #editorial-minimal .hero-fade { opacity: 0; animation: heroFade .6s ease both; }
+      @keyframes heroRise { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+      @keyframes heroFade { 0% { opacity: 0; } 100% { opacity: 1; } }
     }
     @media (prefers-reduced-motion: reduce) {
-      #editorial-minimal .reveal { opacity: 1; transform: none; }
+      #editorial-minimal .reveal, #editorial-minimal .reveal.dir-l, #editorial-minimal .reveal.dir-r { opacity: 1; transform: none; }
+      #editorial-minimal .hero-word, #editorial-minimal .hero-fade { opacity: 1; animation: none; }
       #editorial-minimal .btn-primary:hover, #editorial-minimal .btn-ghost:hover, #editorial-minimal .btn-dark:hover, #editorial-minimal .gallery-tile:hover img, #editorial-minimal .testi-card-about:hover { transform: none; }
     }
 </style>
@@ -327,9 +351,9 @@
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,0.62) 0%, rgba(17,17,17,0.55) 50%, rgba(17,17,17,0.72) 100%); z-index:1;"></div>
     <div style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; max-width:640px; padding:0 24px;">
       <div class="label badge-float" style="color:#c08b61; margin-bottom:18px;">A Table Worth Waiting For, Or Not</div>
-      <h1 class="serif" style="font-size:56px; margin:0 0 20px 0; color:#f2efe9; line-height:1.15;">Sweet &amp; Savory Pies in Colorado Springs</h1>
-      <p style="font-size:15px; line-height:1.7; color:rgba(242,239,233,0.9); max-width:460px; margin:0 0 34px 0;">Pot pies, sweet pies, sandwiches, and salads. Order ahead for pickup, or come sit with us; we keep a proper bar too.</p>
-      <div class="hero-actions" style="display:flex; gap:14px; justify-content:center;">
+      <h1 class="serif" style="font-size:56px; margin:0 0 20px 0; color:#f2efe9; line-height:1.15;"><span class="hero-word" style="animation-delay:0ms;">Sweet</span> <span class="hero-word" style="animation-delay:60ms;">&amp;</span> <span class="hero-word" style="animation-delay:120ms;">Savory</span> <span class="hero-word" style="animation-delay:180ms;">Pies</span> <span class="hero-word" style="animation-delay:240ms;">in</span> <span class="hero-word" style="animation-delay:300ms;">Colorado</span> <span class="hero-word" style="animation-delay:360ms;">Springs</span></h1>
+      <p class="hero-fade" style="font-size:15px; line-height:1.7; color:rgba(242,239,233,0.9); max-width:460px; margin:0 0 34px 0; animation-delay:420ms;">Pot pies, sweet pies, sandwiches, and salads. Order ahead for pickup, or come sit with us; we keep a proper bar too.</p>
+      <div class="hero-actions hero-fade" style="display:flex; gap:14px; justify-content:center; animation-delay:480ms;">
         <a href="https://314pibar.com/order/" class="btn-primary" style="background:#c08b61; border-color:#c08b61; color:#111111;">Order Online</a>
         <a href="#visit-editorial-minimal" class="btn-ghost">Get Directions</a>
       </div>
@@ -439,14 +463,14 @@
   </div>
 
   <!-- Take 'n' Bake / The Bar: full-bleed alternating feature bands (moved higher, supports online ordering) -->
-  <div id="takenbake-editorial-minimal" class="reveal feature-band" style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:400px; background:#302b2a; height:400px; overflow:hidden;">
-    <div style="display:flex; flex-direction:column; justify-content:center; padding:44px 64px;">
+  <div id="takenbake-editorial-minimal" class="feature-band" style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:400px; background:#302b2a; height:400px; overflow:hidden;">
+    <div class="reveal dir-l" style="display:flex; flex-direction:column; justify-content:center; padding:44px 64px;">
       <div class="label" style="margin-bottom:14px; color:#c08b61;">Frozen &middot; Bake At Home</div>
       <h3 class="serif" style="font-size:36px; color:#f2efe9; margin:0 0 18px 0; line-height:1.2;">Take &lsquo;n&rsquo; Bake, For Later.</h3>
       <p style="font-size:15px; line-height:1.75; color:rgba(242,239,233,0.75); max-width:400px; margin:0 0 28px 0;">Frozen, oven-ready pot pies $14.99. Whole fruit and cream pies $35.99&ndash;$39.99. Take it home and bake it whenever you&rsquo;re ready. Not to be confused with our hot, ready-to-eat menu above.</p>
       <a href="https://314pibar.com/order/" class="btn-primary" style="width:fit-content; font-size:11px; padding:14px 28px;">Order Take &lsquo;n&rsquo; Bake</a>
     </div>
-    <img src="img/pot-pie.jpg" alt="Chicken pot pie, oven-ready for Take 'n' Bake" style="width:100%; height:100%; object-fit:cover; display:block;">
+    <img class="reveal dir-r" src="img/pot-pie.jpg" alt="Chicken pot pie, oven-ready for Take 'n' Bake" style="width:100%; height:100%; object-fit:cover; display:block;">
   </div>
 
   <!-- Seam divider: eases the dark-to-light transition between the two bands -->
@@ -456,9 +480,9 @@
     <div style="width:60px; height:1px; background:rgba(76,26,13,0.3);"></div>
   </div>
 
-  <div id="bar-editorial-minimal" class="reveal feature-band" style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:400px; background:#d9d6d5; height:400px; overflow:hidden;">
-    <img src="img/savory-pie.jpg" alt="Craft cocktail at the bar" style="width:100%; height:100%; object-fit:cover; display:block;">
-    <div style="display:flex; flex-direction:column; justify-content:center; padding:44px 64px;">
+  <div id="bar-editorial-minimal" class="feature-band" style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:400px; background:#d9d6d5; height:400px; overflow:hidden;">
+    <img class="reveal dir-l" src="img/savory-pie.jpg" alt="Craft cocktail at the bar" style="width:100%; height:100%; object-fit:cover; display:block;">
+    <div class="reveal dir-r" style="display:flex; flex-direction:column; justify-content:center; padding:44px 64px;">
       <div class="label" style="margin-bottom:14px; color:#4c1a0d;">The Bar</div>
       <h3 class="serif" style="font-size:36px; color:#111111; margin:0 0 18px 0; line-height:1.2;">A Cafe That Keeps a Proper Bar.</h3>
       <p style="font-size:15px; line-height:1.75; color:rgba(42,38,36,0.7); max-width:400px; margin:0 0 20px 0;">Craft cocktails, mixed properly, plus a mocktail and zero-proof list. Pouring weekdays for happy hour.</p>
@@ -475,11 +499,11 @@
   </div>
 
   <!-- Feature band: Sweet Pies spotlight + testimonial -->
-  <div class="reveal spotlight-band" style="display:grid; grid-template-columns:1.1fr 1fr; background:#4c1a0d;">
-    <div style="position:relative; min-height:420px;">
+  <div class="spotlight-band" style="display:grid; grid-template-columns:1.1fr 1fr; background:#4c1a0d;">
+    <div class="reveal dir-l" style="position:relative; min-height:420px;">
       <img src="img/savory-pie.jpg" alt="Key lime pie and craft cocktail" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
     </div>
-    <div style="padding:64px 60px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="reveal dir-r" style="padding:64px 60px; display:flex; flex-direction:column; justify-content:center;">
       <div class="label" style="margin-bottom:16px;">Sweet Pies</div>
       <h3 class="serif" style="font-size:38px; color:#f2efe9; margin:0 0 6px 0;">Key Lime</h3>
       <div style="color:#c08b61; font-weight:600; font-size:15px; margin-bottom:16px;">$7.99 slice</div>
@@ -549,8 +573,8 @@
   </div>
 
   <!-- Closing CTA: Order Online + contact (replaces reservation form) -->
-  <div id="visit-editorial-minimal" class="reveal closing-cta" style="display:grid; grid-template-columns:1fr 1fr; background:#111111;">
-    <div class="section-pad" style="padding:56px 60px;">
+  <div id="visit-editorial-minimal" class="closing-cta" style="display:grid; grid-template-columns:1fr 1fr; background:#111111;">
+    <div class="reveal dir-l section-pad" style="padding:56px 60px;">
       <div class="label" style="margin-bottom:14px;">Order Online</div>
       <h3 class="serif" style="font-size:36px; color:#f2efe9; margin:0 0 14px 0;">Skip the Call, Order Ahead for Pickup</h3>
       <p style="font-size:14px; line-height:1.7; color:rgba(242,239,233,0.7); max-width:380px; margin:0 0 20px 0;">The full menu, ready when you are. Order ahead and pick up, no phone tag.</p>
@@ -572,7 +596,7 @@
         <a href="https://www.google.com/maps?cid=443012866958988631" target="_blank" rel="noopener" class="btn-ghost" style="width:fit-content; margin-top:8px; font-size:11px; padding:12px 22px;">Get Directions</a>
       </div>
     </div>
-    <a href="https://www.google.com/maps?cid=443012866958988631" target="_blank" rel="noopener" aria-label="Open 3.14 Pi Bar in Google Maps, real listing, 4.7 stars, 1,201 reviews" style="position:relative; display:block; width:100%; height:100%; min-height:420px; overflow:hidden; text-decoration:none;">
+    <a href="https://www.google.com/maps?cid=443012866958988631" target="_blank" rel="noopener" aria-label="Open 3.14 Pi Bar in Google Maps, real listing, 4.7 stars, 1,201 reviews" class="reveal dir-r" style="position:relative; display:block; width:100%; height:100%; min-height:420px; overflow:hidden; text-decoration:none;">
       <svg width="100%" height="100%" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; display:block;">
         <rect width="600" height="500" fill="#302b2a"/>
         <g stroke="rgba(192,139,97,0.25)" stroke-width="2">
@@ -672,11 +696,11 @@
     <img src="img/hero-dining.jpg" alt="Spread of pot pies, salad, and dessert at 3.14 Pi Bar" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0;">
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,0.68) 0%, rgba(17,17,17,0.78) 100%); z-index:1;"></div>
     <div style="position:relative; z-index:2;">
-      <div class="label reveal" style="color:#c08b61; margin-bottom:14px;">Order Ahead For Pickup</div>
-      <h1 class="serif reveal" style="font-size:50px; margin:0 0 16px 0; color:#f2efe9; line-height:1.15;">Our Menu</h1>
-      <p class="reveal" style="font-size:15px; line-height:1.7; color:rgba(242,239,233,0.9); max-width:560px; margin:0 auto 26px auto;">The full catalog: hot pot pies, sandwiches, salads, sweet pies by the slice, frozen Take &lsquo;n&rsquo; Bake favorites, and more. Order online for pickup, or come sit with us.</p>
-      <a href="https://314pibar.com/order/" class="btn-primary" style="margin-bottom:30px;">Order Online</a>
-      <div class="category-jump reveal" style="max-width:820px; margin:0 auto;">
+      <div class="label hero-fade" style="color:#c08b61; margin-bottom:14px; animation-delay:0ms;">Order Ahead For Pickup</div>
+      <h1 class="serif" style="font-size:50px; margin:0 0 16px 0; color:#f2efe9; line-height:1.15;"><span class="hero-word" style="animation-delay:60ms;">Our</span> <span class="hero-word" style="animation-delay:140ms;">Menu</span></h1>
+      <p class="hero-fade" style="font-size:15px; line-height:1.7; color:rgba(242,239,233,0.9); max-width:560px; margin:0 auto 26px auto; animation-delay:260ms;">The full catalog: hot pot pies, sandwiches, salads, sweet pies by the slice, frozen Take &lsquo;n&rsquo; Bake favorites, and more. Order online for pickup, or come sit with us.</p>
+      <a href="https://314pibar.com/order/" class="btn-primary hero-fade" style="margin-bottom:30px; animation-delay:340ms;">Order Online</a>
+      <div class="category-jump hero-fade" style="max-width:820px; margin:0 auto; animation-delay:400ms;">
         <a href="#cat-pot-pies">Hot Pot Pies</a>
         <a href="#cat-sandwiches">Sandwiches</a>
         <a href="#cat-salads">Salads &amp; Apps</a>
@@ -1025,9 +1049,9 @@
   </div>
 
   <!-- Craft Cocktails, Mocktails & Beverages: dine-in and non-alcoholic notes -->
-  <div id="cat-bar" class="reveal cocktail-band" style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:340px; height:340px; overflow:hidden; background:#4c1a0d;">
-    <img src="img/savory-pie.jpg" alt="Craft cocktail and key lime pie at the bar" style="width:100%; height:100%; object-fit:cover; display:block;">
-    <div style="display:flex; flex-direction:column; justify-content:center; padding:44px 60px;">
+  <div id="cat-bar" class="cocktail-band" style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:340px; height:340px; overflow:hidden; background:#4c1a0d;">
+    <img class="reveal dir-l" src="img/savory-pie.jpg" alt="Craft cocktail and key lime pie at the bar" style="width:100%; height:100%; object-fit:cover; display:block;">
+    <div class="reveal dir-r" style="display:flex; flex-direction:column; justify-content:center; padding:44px 60px;">
       <div class="label" style="margin-bottom:14px;">The Bar</div>
       <h3 class="serif" style="font-size:32px; color:#f2efe9; margin:0 0 12px 0; line-height:1.2;">Craft Cocktails</h3>
       <p style="font-size:14px; line-height:1.7; color:rgba(242,239,233,0.75); max-width:380px; margin:0 0 8px 0;">Mocktails available to order online, $5.00 each. Weekday happy hour.</p>
@@ -1137,10 +1161,10 @@
     <img src="img/about-interior.jpg" alt="Dining room at 3.14 Pi Bar with pendant lighting and a fresh baked pies sign" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0;">
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.8) 100%); z-index:1;"></div>
     <div style="position:relative; z-index:2;">
-      <div class="label reveal" style="color:#c08b61; margin-bottom:14px;">About Us</div>
-      <h1 class="serif reveal" style="font-size:52px; margin:0 0 16px 0; color:#f2efe9; line-height:1.15;">Our Company</h1>
-      <p class="reveal" style="font-size:15px; line-height:1.7; color:rgba(242,239,233,0.9); max-width:560px; margin:0 auto 26px auto;">Sweet and savory pie caf&eacute; and cocktail bar in Colorado Springs.</p>
-      <a href="https://314pibar.com/order/" class="btn-primary">Order Online</a>
+      <div class="label hero-fade" style="color:#c08b61; margin-bottom:14px; animation-delay:0ms;">About Us</div>
+      <h1 class="serif" style="font-size:52px; margin:0 0 16px 0; color:#f2efe9; line-height:1.15;"><span class="hero-word" style="animation-delay:60ms;">Our</span> <span class="hero-word" style="animation-delay:150ms;">Company</span></h1>
+      <p class="hero-fade" style="font-size:15px; line-height:1.7; color:rgba(242,239,233,0.9); max-width:560px; margin:0 auto 26px auto; animation-delay:280ms;">Sweet and savory pie caf&eacute; and cocktail bar in Colorado Springs.</p>
+      <a href="https://314pibar.com/order/" class="btn-primary hero-fade" style="animation-delay:360ms;">Order Online</a>
     </div>
   </div>
 
@@ -1149,23 +1173,23 @@
     <div class="label reveal">Learn About Us</div>
     <h2 class="serif reveal" style="font-size:40px; margin:10px 0 20px 0; color:#111111;">Who We Are</h2>
     <p class="reveal" style="font-size:14px; line-height:1.7; color:rgba(42,38,36,0.75); max-width:620px; margin:0 auto 50px auto;">Four things that shape every visit, from the name on the door to the ingredients on the plate.</p>
-    <div class="value-grid reveal" style="max-width:920px; margin:0 auto;">
-      <div class="value-card">
+    <div class="value-grid" style="max-width:920px; margin:0 auto;">
+      <div class="value-card reveal dir-l">
         <div class="value-index">01</div>
         <h3 class="serif">A Playful Nod to Pie and Precision</h3>
         <p>The bar&rsquo;s name, 3.14 Pi, is a clever tribute to both the mathematical constant and our love for pies. This symbolism reflects our passion for precision and creativity, evident in every dish we serve. It&rsquo;s a name that represents not just our food, but our dedication to making every experience memorable.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card reveal dir-r">
         <div class="value-index">02</div>
         <h3 class="serif">Experience the Magic of 3.14 Pi Bar</h3>
         <p>From our handcrafted pies to our commitment to community, every detail at 3.14 Pi Bar is designed with you in mind. We&rsquo;re passionate about what we do, and we&rsquo;re excited to share it with you. Come by and experience the comfort, creativity, and connection that make 3.14 Pi Bar truly special.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card reveal dir-l">
         <div class="value-index">03</div>
         <h3 class="serif">A Space for Making Memories</h3>
         <p>At 3.14 Pi Bar, we don&rsquo;t just serve food. We create experiences. Whether you&rsquo;re celebrating a special occasion, catching up with old friends, or enjoying a quiet moment to yourself, we&rsquo;re here to make your visit special. Our cozy ambiance and attentive team ensure that every guest feels at home.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card reveal dir-r">
         <div class="value-index">04</div>
         <h3 class="serif">Supporting Local and Sustainable Practices</h3>
         <p>We&rsquo;re proud to support local businesses by sourcing ingredients from nearby suppliers whenever possible. Sustainability is also important to us, and we&rsquo;re always looking for ways to minimize waste and reduce our environmental footprint. It&rsquo;s just one way we show our love for the Colorado Springs community.</p>
@@ -1174,9 +1198,9 @@
   </div>
 
   <!-- Feature band: real dining room photo -->
-  <div class="reveal feature-band-about">
-    <div class="fb-img"><img src="img/about-interior.jpg" alt="Cozy dining room at 3.14 Pi Bar"></div>
-    <div class="fb-copy">
+  <div class="feature-band-about">
+    <div class="reveal dir-l fb-img"><img src="img/about-interior.jpg" alt="Cozy dining room at 3.14 Pi Bar"></div>
+    <div class="reveal dir-r fb-copy">
       <div class="label" style="margin-bottom:16px;">Our Atmosphere</div>
       <h3 class="serif" style="font-size:34px; color:#f2efe9; margin:0 0 16px 0;">A Space for Making Memories</h3>
       <p style="font-size:14px; line-height:1.75; color:rgba(242,239,233,0.75); max-width:400px; margin:0;">Cozy tables, warm lighting, and a full bar under one roof, indoors and on the patio. Come celebrate, catch up with friends, or grab a quiet booth of your own.</p>
@@ -1195,14 +1219,14 @@
   </div>
 
   <!-- The Bar: real cocktail photo -->
-  <div class="reveal feature-band-about">
-    <div class="fb-copy">
+  <div class="feature-band-about">
+    <div class="reveal dir-l fb-copy">
       <div class="label" style="margin-bottom:16px;">The Bar</div>
       <h3 class="serif" style="font-size:34px; color:#f2efe9; margin:0 0 16px 0;">Craft Cocktails</h3>
       <p style="font-size:14px; line-height:1.7; color:rgba(242,239,233,0.75); max-width:380px; margin:0 0 8px 0;">Mocktails available to order online, $5.00 each. Weekday happy hour.</p>
       <p style="font-size:12px; line-height:1.6; color:rgba(242,239,233,0.55); max-width:380px; margin:0;">Alcoholic cocktails, zero-proof cocktails, and happy hour are served in person only, not available for online order.</p>
     </div>
-    <div class="fb-img"><img src="img/about-cocktails.jpg" alt="Two craft cocktails garnished with an orange slice at 3.14 Pi Bar"></div>
+    <div class="reveal dir-r fb-img"><img src="img/about-cocktails.jpg" alt="Two craft cocktails garnished with an orange slice at 3.14 Pi Bar"></div>
   </div>
 
   <!-- Gallery: real venue photography -->
@@ -1270,7 +1294,7 @@
 
   <!-- Closing CTA -->
   <div style="display:grid; grid-template-columns:1fr 1fr; background:#111111;">
-    <div class="section-pad" style="padding:56px 60px;">
+    <div class="reveal dir-l section-pad" style="padding:56px 60px;">
       <div class="label" style="margin-bottom:14px;">Visit Us</div>
       <h3 class="serif" style="font-size:36px; color:#f2efe9; margin:0 0 14px 0;">Come By Anytime</h3>
       <p style="font-size:13px; line-height:1.7; color:rgba(242,239,233,0.65); max-width:380px; margin:0 0 6px 0;">We&rsquo;re easy to find at 5152 Centennial Blvd in Colorado Springs, and we&rsquo;re proud to be a local favorite. Whether you&rsquo;re stopping in for a meal, picking up a Take &lsquo;n&rsquo; Bake pie, or joining us for happy hour, we can&rsquo;t wait to welcome you.</p>
@@ -1281,7 +1305,7 @@
       </div>
       <a href="https://www.google.com/maps?cid=443012866958988631" target="_blank" rel="noopener" class="btn-ghost">Get Directions</a>
     </div>
-    <div class="section-pad" style="padding:56px 60px; border-left:1px solid rgba(242,239,233,0.1);">
+    <div class="reveal dir-r section-pad" style="padding:56px 60px; border-left:1px solid rgba(242,239,233,0.1);">
       <div class="label" style="margin-bottom:14px;">Order Online</div>
       <h3 class="serif" style="font-size:36px; color:#f2efe9; margin:0 0 14px 0;">Skip the Call, Order Ahead for Pickup</h3>
       <p style="font-size:14px; line-height:1.7; color:rgba(242,239,233,0.7); max-width:380px; margin:0 0 20px 0;">The full menu, ready when you are. Order ahead and pick up, no phone tag.</p>
